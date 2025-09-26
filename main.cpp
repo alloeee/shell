@@ -1,7 +1,6 @@
 #include <iostream>
 #include <string>
 
-
 int main() {
 
     std::cout << std::unitbuf;
@@ -10,10 +9,10 @@ int main() {
     std::cout << "$ ";
 
     std::string input;
-    std::getline(std::cin, input);
-    std::cout<<input<<"\n";
-    return 0;
-
-
-
+    while (std::getline(std::cin, input))
+    {
+        std::cout << "$ ";
+        if (input == "\\q"){
+            break;}
+    }
 }
