@@ -29,7 +29,12 @@ int main() {
                 std::cout<<line<<"\n";
             }
 	}
-        if (input == "\\q"){
+        else if (input == "\\q"){
             break;}
+        else if (input.substr(0, 5) == "echo ")
+        {
+            std::cout << input.substr(5)<<"\n$ ";
+        }
+ 
     }
 }
