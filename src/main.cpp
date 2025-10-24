@@ -16,7 +16,7 @@ int main() {
 
 
 
-    std::cout << "$ ";
+    //std::cout << "$ ";
 
 
 
@@ -32,7 +32,7 @@ int main() {
 
     {
 
-        std::cout << "$ ";
+        
 
         if(!input.empty()){
 
@@ -62,15 +62,14 @@ int main() {
 
         else if (input == "\\q"){
 
-            break;}
+            break;
+        }
 
-        else if (input.substr(0, 5) == "echo ")
+        else if (input.substr(0, 7) == "debug '" && input[input.length() - 1] == '\'')
 
         {
 
-
-            std::cout << input.substr(5)<<"\n";
-
+        std::cout << input.substr(7, input.length() - 8) << std::endl;    
 
         }
 
@@ -100,7 +99,7 @@ else if (input.substr(0,4) == "\\e $")
             {
                 if (c == ':') 
                 {
-                    std::cout << "- " << current_part << "\n";
+                    std::cout << current_part << "\n";
                     current_part = "";
                 }
                 else 
@@ -108,7 +107,7 @@ else if (input.substr(0,4) == "\\e $")
                     current_part += c;
                 }
             }
-            std::cout << "- " << current_part << "\n";
+            std::cout << current_part << "\n";
         }
         else 
         { 
@@ -126,7 +125,7 @@ else if (input.substr(0,4) == "\\e $")
 	else std::cout<<input<<": command not found\n";
 
 
-	std::cout<<"$ ";
+	//std::cout<<"$ ";
 
     }
 
